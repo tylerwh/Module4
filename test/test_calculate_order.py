@@ -23,7 +23,7 @@ class TestCaseUnderTen(unittest.TestCase):
   
   
   def test_price_as_ten_dollars(self):
-    self.assertEqual(checkout.calculate_order(10, 5, .015), 10.46) # Desire is to round decimal up and have two decimal places
+    self.assertEqual(checkout.calculate_order(10, 5, .15), 10.46)
   
 
   def test_price_as_ten_with_ten_dollars_off(self):
