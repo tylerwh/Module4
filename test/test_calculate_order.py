@@ -90,3 +90,30 @@ class TestCaseThirtyToLessThanFifty(unittest.TestCase):
 
   def test_fortynine_and_ninetynine_cents_with_ten_dollars_off(self):
     self.assertEqual(checkout.calculate_order(49.99, 10, .20), 45.86)
+
+
+class TestCaseFiftyOrMore(unittest.TestCase):
+
+
+  def test_fiftyeight_with_five_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(58, 5, .10), 50.56)
+  
+
+  def test_sixtyfour_and_ninetynine_cents_with_five_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(64.99, 5, .15), 54.05)
+  
+
+  def test_sixtyseven_with_ten_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(67, 5, .20), 52.58)
+  
+
+  def test_seventynine_with_ten_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(79, 10, .10), 65.83)
+
+  
+  def test_onehundred_with_ten_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(100, 10, .20), 76.32)
+
+  
+  def test_threehundred_thirtythree_and_thirty_cents_with_five_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(333.30, 5, .10), 313.20)
