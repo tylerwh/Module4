@@ -18,7 +18,8 @@ def calculate_order(price, cash_coupon, percent_coupon):
     order_total += 7.95
   elif order_total >= 30 and order_total < 50:
     order_total += 11.95
-  
+  elif order_total >= 50: # Adding this elif statement just for consistency
+    order_total # No change since shipping is free on orders totalling 50 or more
   
   # return float(format(order_total, '.2f')) First format attempt worked for first TestCase
   
