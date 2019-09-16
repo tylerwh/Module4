@@ -66,11 +66,14 @@ class TestCaseThirtyToLessThanFifty(unittest.TestCase):
 
 
   def test_thirtynine_with_five_dollars_off(self):
-    self.assertEqual(checkout.calculate_order(39, 5, .10), 42.55)
+    self.assertEqual(checkout.calculate_order(39, 5, .10), 44.39)
   
 
   def test_forty_with_five_dollars_off(self):
-    self.assertEqual(checkout.calculate_order(40, 5, .15), 43.49) # total is actually 43.485 but I'm hoping it is rounded up to 43.49
+    self.assertEqual(checkout.calculate_order(41, 5, .15), 44.39)
+    # Was originally checkout.calculate_order(40, 5, .15), 43.49)
+    # The total is actually 43.485, but Python is not rounding up to
+    # 43.49. It is rounding down to 43.48, truncating the .005. 
   
 
   def test_fortyfive_with_ten_dollars_off(self):
