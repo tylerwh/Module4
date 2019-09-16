@@ -62,4 +62,28 @@ class TestCaseTenToLessThanThirty(unittest.TestCase):
     self.assertEqual(checkout.calculate_order(20.01, 5, .20), 20.68) 
 
 
+class TestCaseThirtyToLessThanFifty(unittest.TestCase):
 
+
+  def test_thirtynine_with_five_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(39, 5, .10), 42.55)
+  
+
+  def test_forty_with_five_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(40, 5, .15), 43.49) # total is actually 43.485 but I'm hoping it is rounded up to 43.49
+  
+
+  def test_fortyfive_with_ten_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(45, 10, .10), 45.34)
+  
+
+  def test_fortynine_with_five_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(49, 5, .20), 49.26)
+  
+
+  def test_fortynine_and_fiftyone_cents_with_five_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(49.51, 5, .10), 54.41)
+  
+
+  def test_fortynine_and_ninetynine_cents_with_ten_dollars_off(self):
+    self.assertEqual(checkout.calculate_order(49.99, 10, .20), 45.86)
